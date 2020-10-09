@@ -9,7 +9,6 @@ class Question{
 	private static String who(String question){
 		Matcher matcher = whoPattern.matcher(question);
 		
-		
 		if(matcher.find()){
 			String subject = matcher.group(2);
 			

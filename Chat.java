@@ -1,3 +1,4 @@
+import java.util.Random;
 
 class Chat{
 	
@@ -8,18 +9,18 @@ class Chat{
 	public String respondOther(String query){
 		for(String greeting : greetings){
 			if(query.toLowerCase().contains(greeting)){
-				return "Hello there";
+				return greetings[new Random().nextInt(greetings.length)];
 			}
 		}
 		
 		for(String farewell : farewells){
 			if(query.toLowerCase().contains(farewell)){
-				System.out.println("See You again soon!");
+				System.out.println(farewells[new Random().nextInt(farewells.length)]);
 				System.exit(0);
 			}
 		}
 		
-		return "OK";
+		return String.format("%s?", query);
 	}
 	
 	public String respond(String query){
